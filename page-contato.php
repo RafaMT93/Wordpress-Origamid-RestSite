@@ -1,0 +1,34 @@
+<?php 
+	//Template Name: Contato
+?>
+
+<?php get_header(); ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<section class="container contato">
+			<h2 class="subtitulo"><?php the_title(); ?></h2>
+
+			<div class="grid-16">
+				<a href="https://www.google.com.br/maps/place/<?php the_field('addres'); ?>- <?php the_field('district'); ?>, <?php the_field('country_name'); ?> - <?php the_field('country'); ?>, <?php the_field('cep'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/rest-mapa.jpg" alt="Fachada do Rest"></a>
+			</div>
+
+			<div class="grid-1-3 contato-item">
+				<h2>Dados</h2>
+				<p>21 <?php the_field('phone'); ?></p>
+				<p>contato@rest.com</p>
+				<p>facebook.com/rest/</p>
+			</div>
+			<div class="grid-1-3 contato-item">
+				<h2>Horários</h2>
+				<p>Segunda à Sexta: 10 às 23</p>
+				<p>Sábado: 14 às 23</p>
+				<p>Domingo: 14 às 22</p>
+			</div>
+			<div class="grid-1-3 contato-item">
+				<h2>Endereço</h2>
+				<p><?php the_field('addres'); ?></p>
+				<p><?php the_field('district'); ?> - <?php the_field('country'); ?></p>
+				<p>Brasil - Terra - Via Láctea</p>
+			</div>
+		</section>
+	<?php endwhile; else: endif; 	?>
+<?php get_footer(); ?>
