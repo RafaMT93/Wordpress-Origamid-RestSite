@@ -1,1 +1,1 @@
-"# Wordpress-Origamid-RestSite" 
+Wordpress Theme
